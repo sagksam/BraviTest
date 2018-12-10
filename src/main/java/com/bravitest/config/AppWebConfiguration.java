@@ -12,6 +12,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import com.bravitest.controller.PersonController;
+import com.bravitest.dao.PersonDAO;
 import com.bravitest.dao.PersonDAOImpl;
 import com.bravitest.servico.PersonService;
 
@@ -21,7 +22,7 @@ import com.bravitest.servico.PersonService;
  * @author Paulo
  */
 @EnableWebMvc
-@ComponentScan(basePackageClasses={PersonDAOImpl.class, PersonService.class, PersonController.class})
+@ComponentScan(basePackageClasses={PersonDAOImpl.class, PersonService.class, PersonController.class, PersonDAO.class})
 public class AppWebConfiguration {
     
     @Bean 

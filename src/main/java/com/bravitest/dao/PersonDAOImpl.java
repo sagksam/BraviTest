@@ -12,6 +12,7 @@ public class PersonDAOImpl implements PersonDAO{
 
 	private Session session = BuildSessionFactory.getSessionFactory().openSession();
 	
+	//Método que cria um Person no banco de dados
 	@Override
 	public void createUser(Person person) {
 		
@@ -31,6 +32,7 @@ public class PersonDAOImpl implements PersonDAO{
 
 	}
 	
+	//Método que recupera um Person no banco de dados
 	@Override
 	public Person getPerson(long id, Class clazz) {
 		
@@ -55,6 +57,7 @@ public class PersonDAOImpl implements PersonDAO{
 		return person;
 	}
 
+	//Método que atualiza um Person no banco de dados
 	@Override
 	public void updatePerson(Person person) {
 		
@@ -76,6 +79,7 @@ public class PersonDAOImpl implements PersonDAO{
 		
 	}
 
+	//Método que deleta um Person no banco de dados
 	@Override
 	public void deletePerson(Person person) {
 		

@@ -4,6 +4,7 @@ import java.util.Stack;
 
 public class BalancedBrackets {
 
+	//Método que valida uma sequencia de brackets
 	public boolean isValidBrackets(String brackets) {
 		Stack<Character> stack = new Stack<Character>();
 		for (int i = 0; i < brackets.length(); i++) {

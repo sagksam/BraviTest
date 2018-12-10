@@ -19,6 +19,7 @@ public class PersonController {
 	@Autowired
 	private PersonService personService;
 	
+	 //Método que cria um Person e seus contatos
 	 @RequestMapping(value="/create/", method = RequestMethod.POST, headers="Accept=application/json")
 	 public ResponseEntity<Void> create(@RequestBody Person person){
 		 personService.createPerson(person);
@@ -26,7 +27,8 @@ public class PersonController {
 	  HttpHeaders headers = new HttpHeaders();
 	  return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
 	 }
-	 
+	
+	 //Método que recupera um Person e seus contatos
 	 @RequestMapping(value="/get/{id}", method = RequestMethod.GET, headers="Accept=application/json")
 	 public ResponseEntity<Person> get(@PathVariable("id") int id){
 		 
@@ -34,6 +36,7 @@ public class PersonController {
 		 return new ResponseEntity<Person>(person, HttpStatus.OK);
 	 }
 	 
+	//Método que atualiza um Person e seus contatos
 	 @RequestMapping(value="/update/{id}", method = RequestMethod.PUT, headers="Accept=application/json")
 	 public ResponseEntity<Void> update(@PathVariable("id") int id, @RequestBody Person person){
 	  person.setId(id);
@@ -43,6 +46,7 @@ public class PersonController {
 	  return new ResponseEntity<Void>(headers, HttpStatus.OK);
 	 }
 	 
+	//Método que deleta um Person e seus contatos
 	 @RequestMapping(value="/delete/{id}", method = RequestMethod.DELETE, headers="Accept=application/json")
 	 public ResponseEntity<Void> delete(@PathVariable("id") int id, @RequestBody Person person){
 	  person.setId(id);

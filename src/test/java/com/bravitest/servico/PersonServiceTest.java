@@ -1,4 +1,4 @@
-package com.bravitest.dao;
+package com.bravitest.servico;
 
 import static org.junit.Assert.*;
 
@@ -14,15 +14,16 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.bravistest.modelo.Person;
-
+import com.bravitest.dao.PersonDAO;
+import com.bravitest.dao.PersonDAOImpl;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {PersonDAOImpl.class})
-public class PersonDAOImplTest {
+@ContextConfiguration(classes = {PersonService.class, PersonDAOImpl.class})
+public class PersonServiceTest {
 
+	private Person mock; 
 	@Autowired
-	private PersonDAO dao;
-	private Person mock;
+	private PersonService personService;
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -35,7 +36,7 @@ public class PersonDAOImplTest {
 	@Before
 	public void setUp() throws Exception {
 		
-		mock = new Person("Jose Silva", "(19)1998565878", "josesilva@terra.com.br", "(19)1998565878");
+		mock = new Person("Maria Silva", "(19)1998565979", "mariasilva@terra.com.br", "(19)1998565979");
 	}
 
 	@After
@@ -43,32 +44,31 @@ public class PersonDAOImplTest {
 	}
 
 	@Ignore
-	public void testCreateUser() {
+	public void testCreatePerson() {
 		
-		dao.createUser(mock);
+		personService.createPerson(mock);
 	}
 
 	@Ignore
 	public void testGetPerson() {
 		
-		mock = dao.getPerson(1, Person.class);
-		assertEquals(mock.getId(), 1);
+		mock = personService.getPerson(1, Person.class);
+		assertEquals(1, mock.getId());
 	}
 
 	@Ignore
 	public void testUpdatePerson() {
-		
-		mock = dao.getPerson(1, Person.class);
-		mock.setEmail("josesilva@gmail.com");
-		dao.updatePerson(mock);
-		assertEquals("josesilva@gmail.com", mock.getEmail());
+		mock = personService.getPerson(1, Person.class);
+		mock.setEmail("mariasilva@gmail.com");
+		personService.updatePerson(mock);
+		assertEquals("mariasilva@gmail.com", mock.getEmail());
 	}
 
 	@Ignore
 	public void testDeletePerson() {
 		
-		mock = dao.getPerson(1, Person.class);
-		dao.deletePerson(mock);
+		mock = personService.getPerson(1, Person.class);
+		personService.deletePerson(mock);
 	}
 
 }
