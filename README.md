@@ -1,7 +1,10 @@
 # BraviTest
 Teste técnico para a empresa Bravi. 
+
 Criação da classe BalancedBrackets que valida uma determinada sequência de brackets.
+
 Criação de uma API Rest para uma Contact List. 
+
 
 # Técnologias
 Banco de Dados: MySQL
