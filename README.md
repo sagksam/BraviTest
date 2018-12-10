@@ -14,6 +14,7 @@ Frameworks: Hibernate, Spring, JUnit
 # Manual de Execução - Contact List
 
 1 - Faça a configuração do banco de dados no arquivo hibernate.cfg.xml que se encontra em src/main/resources
+
 2 - Execute o arquivo script.sql que se encontra na pasta do projeto
 3 - Baixe o software Postman nesse link para a execução da API https://www.getpostman.com/apps
 4 - Faça a execução do CRUD de acordo com as instruções abaixo.
