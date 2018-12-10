@@ -9,6 +9,7 @@ Criação de uma API Rest para uma Contact List.
 # Técnologias
 Banco de Dados: MySQL
 Frameworks: Hibernate, Spring, JUnit
+Servidor de Aplicação: Tomcat 7 
 
 # Manual de Execução - Balanced Brackets
 
